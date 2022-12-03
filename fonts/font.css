@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Comfortaa-Regular';
+  src: url('Comfortaa-Regular.eot');
+  src: url('Comfortaa-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Comfortaa-Regular.svg#Comfortaa-Regular') format('svg'),
+       url('Comfortaa-Regular.ttf') format('truetype'),
+       url('Comfortaa-Regular.woff') format('woff'),
+       url('Comfortaa-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Comfortaa-Bold';
+  src: url('Comfortaa-Bold.eot');
+  src: url('Comfortaa-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Comfortaa-Bold.svg#Comfortaa-Regular') format('svg'),
+       url('Comfortaa-Boldr.ttf') format('truetype'),
+       url('Comfortaa-Bold.woff') format('woff'),
+       url('Comfortaa-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
