@@ -17,6 +17,12 @@ body {
     color: #000000;
 }
 
+header {
+    background-color: aquamarine;
+    padding: 12px;
+    margin: 8px 8px 12px 8px;
+    border-bottom: 0.5px solid rgb(201, 201, 201);
+}
 h1, h2, h3, h4 {
     line-height: 1.2;
     margin: 8px 0;
