@@ -14,41 +14,43 @@
     </head>
     <body>
         <header>
-            <nav>
-                <a href="index.html">Meet WOO</a>
-                <a href="about.html">About me</a>
-                <a href="project.html">Portfolio</a>
-                <a href="#contact">contact</a>
-            </nav>
-            <img src="img/projectWoo/logoFinn.svg" alt="woo logo" style="width:64px;">
-            <div>
-                <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132"><i class="fa-solid fa-user"></i></a>
-                <a href="mailto:woojooinnet@gamil.com"><i class="fa-sharp fa-solid fa-at"></i></a>
+            <div class="container">
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="menu"><i class="fa-sharp fa-solid fa-bars"></i></a></li>
+                        <!-- <li><a href="index.html">Portfolio</a></li>
+                        <li><a href="about.html">About Woo</a></li>
+                        <li><a href="#contact">contact</a></li> -->
+                    </ul>
+                </nav>
+                <a href="index.html"><img src="img/projectWoo/logoFinn.svg" class="logo" alt="woo logo"></a>
+                <div class="quickContact">
+                    <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132"><i class="fa-solid fa-user"></i></a>
+                    <a href="mailto:woojooinnet@gamil.com"><i class="fa-sharp fa-solid fa-at"></i></a>
+                </div>
             </div>
         </header>
         <main>
-            <div id="intro" class="section">
-                <div class="mainWrap">
+            <div id="intro">
+                <div class="container">
                     <div class="animateImg">
                         <img src="img/projectWoo/logo_sample.svg" alt="animate logo" style="width:200px">
                     </div>
                     <h1>Welcome!</h1>
-                    <h4>My name is <span>FINN WOO,</span></h4>
+                    <h4>I'm <span>FINN WOO,</span></h4>
                     <p>
                         I’m a <span>content designer</span> with working experience in various industry fields.
                     </p>
-                </div>
-                <div class="categories">
-                    <div><a href="index.html">Meet WOO</a></div>
-                    <div><a href="about.html">About me</a></div>
-                    <div><a href="project.html">Portfolio</a></div>
-                    <div><a href="#contact">contact</a></div>
+                    <div class="categories">
+                        <div><a href="about.html" class="button contact">About me</a></div>
+                        <div><a href="#contact" class="button contact">contact</a></div>
+                    </div>
                 </div>
             </div>
-            <div id="workList" class="section">
-                <div class="workWrap">
+            <div id="workList">
+                <div class="container">
                     <h2>Web design <span>Landing page</span></h2>
-                    <div class="contentWrap">
+                    <div class="row">
                         <div class="contentShow">
                             <div class="projectImg">
                                 <picture>
@@ -63,18 +65,18 @@
                                     built responsive website; coded with CSS3, HTML5 and JavaScript;
                                     contributed from planning process; and maintained clients’ websites from front-end.
                                 </p>
-                                <a href="https://www.smartsejong.kr/index.do" target="_blank">Go to Website</a>
+                                <!-- <a href="https://www.smartsejong.kr/index.do" target="_blank">Go to Website</a> -->
                             </div>
                             <a href="project.html" class="button">Read more</a>
                         </div>
-                        <div class="contentPrevious"></div>
-                        <div class="contentNext"></div>
                     </div>
+                    <div class="contentPrevious"></div>
+                    <div class="contentNext"></div>
                 </div>
             </div>
         </main>
         <footer id="contact">
-            <div class="footerWrap">
+            <div class="container">
                 <h4>Interested in working together?</h4>
                 <div class="contactWrap">
                     <a href="tel:+16467062555" class="button contact">Call me</a>

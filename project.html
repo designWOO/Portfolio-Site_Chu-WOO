@@ -5,29 +5,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="fonts/font.css" rel="stylsheet">
+        <link href="css/reset.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/a21f593d06.js" crossorigin="anonymous"></script>
 
-        <title>Content Designer WOO's portfolio of web design and web development</title>
+        <title>About WOO and introducing woo's career</title>
     </head>
     <body>
         <header>
-            <nav>
-                <a href="index.html">Meet WOO</a>
-                <a href="about.html">About me</a>
-                <a href="project.html">Portfolio</a>
-                <a href="#contact">contact</a>
-            </nav>
-            <img src="img/projectWoo/logoFinn.svg" alt="woo logo" style="width:64px;">
-            <div>
-                <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132"><i class="fa-solid fa-user"></i></a>
-                <a href="mailto:woojooinnet@gamil.com"><i class="fa-sharp fa-solid fa-at"></i></a>
+            <div class="container">
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="menu"><i class="fa-sharp fa-solid fa-bars"></i></a></li>
+                        <!-- <li><a href="index.html">Portfolio</a></li>
+                        <li><a href="about.html">About Woo</a></li>
+                        <li><a href="#contact">contact</a></li> -->
+                    </ul>
+                </nav>
+                <a href="index.html"><img src="img/projectWoo/logoFinn.svg" class="logo" alt="woo logo"></a>
+                <div class="quickContact">
+                    <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132"><i class="fa-solid fa-user"></i></a>
+                    <a href="mailto:woojooinnet@gamil.com"><i class="fa-sharp fa-solid fa-at"></i></a>
+                </div>
             </div>
         </header>
         <main>
-            <div id="projectList" class="section">
-                <div class="projectkWrap">
+            <div id="projectList">
+                <div class="container">
                     <div class="projectDes">
                         <h4>Goal</h4>
                         <p>My portfolio site is aimed at employers' eye-catching. In order to get a web
@@ -90,7 +95,7 @@
             </div>
         </main>
         <footer id="contact">
-            <div class="footerWrap">
+            <div class="container">
                 <h4>Interested in working together?</h4>
                 <div class="contactWrap">
                     <a href="tel:+16467062555" class="button contact">Call me</a>

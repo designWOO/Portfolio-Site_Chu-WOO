@@ -6,6 +6,7 @@
     --point-color: rgb(213,0,50); /*point color*/
     --point-color-darker: rgb(144, 20, 49); /*point dark*/
     --point-color-lighter: rgb(252, 208, 218); /*point light*/
+    --support-color-gray: rgb(201, 201, 201);
 }
 
 body {
@@ -17,29 +18,23 @@ body {
     color: #000000;
 }
 
-header {
-    background-color: aquamarine;
-    padding: 12px;
-    margin: 8px 8px 12px 8px;
-    border-bottom: 0.5px solid rgb(201, 201, 201);
-}
 h1, h2, h3, h4 {
     line-height: 1.2;
     margin: 8px 0;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 700;
 }
 
 h2 {
-    font-size: 2.25em;
+    font-size: 1.75em;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 700;
 }
 
@@ -47,14 +42,23 @@ h4 {
     font-size: 1.35em;
     font-weight: 700;
 }
+.center {
+    text-align: center;
+}
 
 a {
     text-decoration: none;
     color: var( --point-color );
 }
+.quickContact a{
+    color: var(--support-color-gray);
+}
 
 a:visited {
     color: var( --point-color-darker );
+}
+.quickContact a:visited {
+    color: var(--support-color-gray); 
 }
 
 a:hover,
@@ -64,6 +68,9 @@ a:focus {
 
 a:active {
     color: var( --point-color-darker );
+}
+.quickContact a:active {
+    color: var(--support-color-gray);
 }
 
 img {
@@ -77,6 +84,7 @@ img {
     font-weight: 700;
     font-size: 0.8em;
     padding: 12px 16px;
+    margin: 8px 0;
     border-radius: 4px;
     border-bottom: 3px solid var(--point-color-darker);
     transition: 0.2s opacity;
@@ -92,4 +100,87 @@ img {
 .button.contact:hover,
 .button.contact:focus {
     background-color: var(--point-color-lighter);
+}
+
+/* Layout */
+.container {
+    padding: 0 16px;
+}
+
+.row {
+    margin:24px 0;
+}
+
+
+header {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+header .logo{
+    max-width: 56px;
+}
+header > .container > nav > ul > li {
+    display: inline-block;
+    text-transform: uppercase;
+}
+header > .container > nav > ul > li a:visited{
+    color: var( --point-color );
+}
+header > .container > nav > ul > li a:hover,
+header > .container > nav > ul > li a:focus {
+    color: var( --point-color-darker);
+}
+header > .container > nav > ul > li a:active {
+    color: var( --point-color );
+    font-weight: 700;
+}
+header > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px var(--support-color-gray);
+}
+
+main {
+    padding-top:100px;
+}
+
+#intro {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+#intro .categories > div{
+    display: inline-block;
+}
+
+#workList .row{
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+/* intro */
+#intro h1, 
+#intro h4, 
+#intro p {
+    text-align: center;
+}
+
+
+
+
+/* worklist */
+#workList h2 span{
+    font-size: 0.4em;
+    display: block;
+    margin-top: 4px;
+    padding: 8px 10px;
+    background-color: rgb(201 201 201 / 50%);
+    font-weight: 400;
 }
