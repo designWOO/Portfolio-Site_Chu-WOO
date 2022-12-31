@@ -4,7 +4,7 @@
 
 :root {
     --point-color: rgb(213,0,50); /*point color*/
-    --point-color-darker: rgb(144, 20, 49); /*point dark*/
+    --point-color-darker: rgb(124, 15, 40); /*point dark*/
     --point-color-lighter: rgb(252, 208, 218); /*point light*/
     --support-color-gray: rgb(201, 201, 201);
 }
@@ -12,9 +12,9 @@
 body {
     background-color: #ffffff;
     font-family: 'Comfortaa', sans-serif, cursive;
-    font-size: 16pt;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.4;
     color: #000000;
 }
 
@@ -51,14 +51,11 @@ a {
     color: var( --point-color );
 }
 .quickContact a{
-    color: var(--support-color-gray);
+    color: #000000;
 }
 
-a:visited {
-    color: var( --point-color-darker );
-}
 .quickContact a:visited {
-    color: var(--support-color-gray); 
+    color: #000000; 
 }
 
 a:hover,
@@ -70,7 +67,7 @@ a:active {
     color: var( --point-color-darker );
 }
 .quickContact a:active {
-    color: var(--support-color-gray);
+    color: #000000;
 }
 
 img {
@@ -87,8 +84,12 @@ img {
     margin: 8px 0;
     border-radius: 4px;
     border-bottom: 3px solid var(--point-color-darker);
-    transition: 0.2s opacity;
+    transition: background-color 0.5s linear 0s;
 }
+.button:hover {
+  background-color: var(--point-color-darker);
+}
+
 .button.contact {
     display: inline-block;
     background-color: #ffffff;
@@ -102,29 +103,62 @@ img {
     background-color: var(--point-color-lighter);
 }
 
+/* column */
+.col-xl-1 {width: 8.33%;}
+.col-xl-2 {width: 16.66%;}
+.col-xl-3 {width: 25%;}
+.col-xl-4 {width: 33.33%;}
+.col-lg-5 {width: 41.66%;}
+
+.col-lg-7 {width: 58.33%;}
+.col-lg-8 {width: 66.66%;}
+.col-lg-9 {width: 75%;}
+.col-mo-10 {width: 83.33%;}
+.col-mo-11 {width: 91.66%;}
+.col-mo-12 {width: 100%;}
+[class*="col-"] {
+    float: left;
+}
+
 /* Layout */
 .container {
     padding: 0 16px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .row {
     margin:24px 0;
 }
-
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 header {
     text-align: center;
     position: fixed;
     width: 100%;
     background-color: white;
+    z-index: 100;
 }
 
 header .logo{
-    max-width: 56px;
+    max-width: 36px;
 }
+
 header > .container > nav > ul > li {
-    display: inline-block;
+    display: none;
     text-transform: uppercase;
+}
+header i {
+    font-size: 1.3em;
+    margin-left: 8px;
+}
+header > .container > nav > ul > li.mobileMenu {
+    display: inline-block;
 }
 header > .container > nav > ul > li a:visited{
     color: var( --point-color );
@@ -142,7 +176,6 @@ header > .container {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    margin-bottom: 16px;
     align-items: center;
     box-shadow: 0px 4px 4px 0px var(--support-color-gray);
 }
@@ -160,11 +193,6 @@ main {
     display: inline-block;
 }
 
-#workList .row{
-    padding-bottom: 25px;
-    border-bottom: 1px solid rgb(201, 201, 201);
-}
-
 /* intro */
 #intro h1, 
 #intro h4, 
@@ -172,15 +200,201 @@ main {
     text-align: center;
 }
 
-
-
-
 /* worklist */
-#workList h2 span{
-    font-size: 0.4em;
+#workList .container h2 {
+    border-top: 0.3px solid rgb(201, 201, 201);
+    padding-top: 25px;
+}
+
+.projectDes > h4 > span{
+    font-size: 0.5em;
     display: block;
     margin-top: 4px;
     padding: 8px 10px;
     background-color: rgb(201 201 201 / 50%);
     font-weight: 400;
 }
+
+/* about me */
+#aboutMe .more {
+    text-align: center;
+}
+
+#aboutMe h4 {
+    padding-top: 24px;
+    border-top: 0.3px solid rgb(201, 201, 201);
+}
+
+/* Footer */
+#contact {
+    text-align: center;
+}
+
+#contact h4 {
+    padding-top: 24px;
+    border-top: 0.3px solid rgb(201, 201, 201);
+}
+
+/* logo animation */
+#logoani {
+    width: 500px;
+    height: 270px;
+    display:inline-block;
+    stroke:var(--point-color);
+    fill:var(--support-color-gray);
+    position: relative;
+}
+
+.logo-path {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.logo-path {
+    stroke-dasharray: 2600;
+    stroke-dashoffset: 2600;
+}
+
+.n-1 {
+    stroke-width: 20;
+    animation: letter-animation 8s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.n-2 {
+    stroke-width: 20;
+    animation: letter-animation 8s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.r-2 {
+    stroke-width: 20;
+    animation: letter-animation 8s linear infinite;
+    animation-delay: 0.8s;
+}
+
+.r-1 {
+    stroke-width: 20;
+    animation: letter-animation 8s linear infinite;
+    animation-delay: 1s;
+}
+
+/* moving circle */
+.skillAni {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skillAni .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.circleOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(213,0,50,1);
+    border-radius: 50%;
+    animation: moving-circleOne 2s ease-in-out infinite alternate;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+  }
+  .circleTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin:15% -10%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 50%;
+    animation: moving-circleTwo 2s ease-in-out infinite alternate;
+
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+  }
+
+
+@media only screen and (min-width: 640px) {
+    .col-med-6 {width: 50%;}
+
+    body {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    header .logo {
+        max-width: 64px;
+    }
+    header > .container > nav > ul > li {
+        display: inline-block;
+        text-transform: uppercase;
+        margin: 0 8px;
+    }
+    header > .container > nav > ul > li.mobileMenu {
+        display: none;
+    }
+
+    main {
+        padding-top:120px;
+    }
+
+    #contact .container {
+        text-align: center;
+    }
+
+    .projectDes > h4 > span{
+        display: inline-block;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 1920px) {
+}
+
+@media only screen and (max-width: 1200px) {
+    
+}
+
+@keyframes letter-animation {
+    0% {
+        stroke-dashoffset: 2600;
+    }
+    60% {
+        stroke-dashoffset: -2600;
+    }
+    75% {
+        stroke-dashoffset: 2600;
+    }
+    85% {
+        stroke-dashoffset: -2600;
+    }
+    100% {
+        stroke-dashoffset: 2600;
+    }
+}
+
+@keyframes moving-circleOne { 
+    from { transform: translate(5px, -10px); } 
+    to { transform: translate(-3px, 8px) scale(0.95, 1); }
+  }
+  @keyframes moving-circleTwo { 
+    from { transform: translate(-8px, 5px) scale(1, 0.95); } 
+    to { transform: translate(7px, -3px) ; }
+  }
+
+  
