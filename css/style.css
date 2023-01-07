@@ -149,6 +149,9 @@ header .logo{
     max-width: 36px;
 }
 
+header > .container > nav {
+    order:-1;
+}
 header > .container > nav > ul > li {
     display: none;
     text-transform: uppercase;
@@ -159,6 +162,7 @@ header i {
 }
 header > .container > nav > ul > li.mobileMenu {
     display: inline-block;
+    margin-left: 0px;
 }
 header > .container > nav > ul > li a:visited{
     color: var( --point-color );
@@ -237,8 +241,8 @@ main {
 
 /* logo animation */
 #logoani {
-    width: 500px;
-    height: 270px;
+    width: 100%;
+    height: 200px;
     display:inline-block;
     stroke:var(--point-color);
     fill:var(--support-color-gray);
