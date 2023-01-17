@@ -41,6 +41,7 @@ h3 {
 h4 {
     font-size: 1.35em;
     font-weight: 700;
+    padding: 16px 0;
 }
 .center {
     text-align: center;
@@ -50,6 +51,7 @@ a {
     text-decoration: none;
     color: var( --point-color );
 }
+
 .quickContact a{
     color: #000000;
 }
@@ -66,6 +68,7 @@ a:focus {
 a:active {
     color: var( --point-color-darker );
 }
+
 .quickContact a:active {
     color: #000000;
 }
@@ -86,6 +89,7 @@ img {
     border-bottom: 3px solid var(--point-color-darker);
     transition: background-color 0.5s linear 0s;
 }
+
 .button:hover {
   background-color: var(--point-color-darker);
 }
@@ -98,12 +102,13 @@ img {
     border-bottom: 3px solid var(--point-color-darker);
     text-transform: uppercase;
 }
+
 .button.contact:hover,
 .button.contact:focus {
     background-color: var(--point-color-lighter);
 }
 
-/* column */
+/* column ------------------------------------------------- */
 .col-xl-1 {width: 8.33%;}
 .col-xl-2 {width: 16.66%;}
 .col-xl-3 {width: 25%;}
@@ -116,11 +121,9 @@ img {
 .col-mo-10 {width: 83.33%;}
 .col-mo-11 {width: 91.66%;}
 .col-mo-12 {width: 100%;}
-[class*="col-"] {
-    float: left;
-}
 
-/* Layout */
+
+/* Layout ------------------------------------------------- */
 .container {
     padding: 0 16px;
     max-width: 1200px;
@@ -144,46 +147,83 @@ header {
     background-color: white;
     z-index: 100;
 }
+header nav {
+display: inline-block;
+}
 
 header .logo{
     max-width: 36px;
 }
 
-header > .container > nav {
-    order:-1;
-}
-header > .container > nav > ul > li {
-    display: none;
+header .navtoggle nav > ul > li {
     text-transform: uppercase;
 }
+
 header i {
     font-size: 1.3em;
     margin-left: 8px;
 }
-header > .container > nav > ul > li.mobileMenu {
+
+header .navtoggle nav > ul > li {
     display: inline-block;
     margin-left: 0px;
 }
-header > .container > nav > ul > li a:visited{
+
+header .navtoggle li:not(:last-child) {
+    display: none;
+}
+
+header .navtoggle nav > ul > li a:visited{
     color: var( --point-color );
 }
-header > .container > nav > ul > li a:hover,
-header > .container > nav > ul > li a:focus {
+
+header .navtoggle nav > ul > li a:hover,
+header .navtoggle nav > ul > li a:focus {
     color: var( --point-color-darker);
 }
-header > .container > nav > ul > li a:active {
+
+header .navtoggle nav > ul > li a:active {
     color: var( --point-color );
     font-weight: 700;
 }
-header > .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+header .navtoggle, 
+header .container,
+header .navtoggle.responsive {
+    position: relative;
+}
+
+header .navtoggle.responsive li  {
+    display: inline-block;
+    padding: 20px 6px 8px 6px;
+}
+
+header .navtoggle.responsive li:last-child  {
+    display: block;
+    padding: 0px;
+}
+
+header .navtoggle li .mobileMenu {
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+header .navtoggle li .mobileMenu > i{
+    margin-left:0;
+}
+
+header .quickContact {
+    position: absolute;
+    right: 16px;
+    top: 25px;
+}
+
+header > .container {  
     padding: 16px;
     align-items: center;
     box-shadow: 0px 4px 4px 0px var(--support-color-gray);
 }
-
 main {
     padding-top:100px;
 }
@@ -197,14 +237,14 @@ main {
     display: inline-block;
 }
 
-/* intro */
+/* intro ------------------------------------------------- */
 #intro h1, 
 #intro h4, 
 #intro p {
     text-align: center;
 }
 
-/* worklist */
+/* worklist ------------------------------------------------- */
 #workList .container h2 {
     border-top: 0.3px solid rgb(201, 201, 201);
     padding-top: 25px;
@@ -219,7 +259,7 @@ main {
     font-weight: 400;
 }
 
-/* about me */
+/* about me ------------------------------------------------- */
 #aboutMe .more {
     text-align: center;
 }
@@ -229,9 +269,10 @@ main {
     border-top: 0.3px solid rgb(201, 201, 201);
 }
 
-/* Footer */
+/* Footer ------------------------------------------------- */
 #contact {
     text-align: center;
+    background-color: var( --support-color-gray);
 }
 
 #contact h4 {
@@ -239,7 +280,14 @@ main {
     border-top: 0.3px solid rgb(201, 201, 201);
 }
 
-/* logo animation */
+#contact p.copyright {
+    padding: 16px 0;
+    margin-top: 20px;
+    border-top: 0.3px solid #00000052;
+    font-size: 0.85em;
+}
+
+/* logo animation ------------------------------------------------- */
 #logoani {
     width: 100%;
     height: 200px;
@@ -284,7 +332,7 @@ main {
     animation-delay: 1s;
 }
 
-/* moving circle */
+/* moving circle ------------------------------------------------- */
 .skillAni {
     display: flex;
     justify-content: center;
@@ -319,15 +367,14 @@ main {
     background-color: rgba(0, 0, 0, 0.85);
     border-radius: 50%;
     animation: moving-circleTwo 2s ease-in-out infinite alternate;
-
     text-align: center;
     font-size: 1.5rem;
     color: white;
     font-weight: 500;
   }
 
-
-@media only screen and (min-width: 640px) {
+/* queries ------------------------------------------------- */
+@media only screen and (min-width: 641px) {
     .col-med-6 {width: 50%;}
 
     body {
@@ -337,18 +384,34 @@ main {
 
     header .logo {
         max-width: 64px;
+        position: absolute;
+        left:16px;
     }
-    header > .container > nav > ul > li {
+
+    header nav {
+        height: 68px;
+    }
+
+    header .navtoggle ul {
+        line-height: 70px;
+    }
+    header .navtoggle li:not(:last-child) {
         display: inline-block;
-        text-transform: uppercase;
         margin: 0 8px;
     }
-    header > .container > nav > ul > li.mobileMenu {
+    
+    header .navtoggle li:last-child {
         display: none;
     }
 
     main {
         padding-top:120px;
+    }
+
+    #aboutMe .myText {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 36px;
     }
 
     #contact .container {
@@ -358,6 +421,10 @@ main {
     .projectDes > h4 > span{
         display: inline-block;
         margin-top: 0px;
+    }
+
+    [class*="col-"] {
+        float: left;
     }
 }
 
@@ -374,6 +441,7 @@ main {
     
 }
 
+/* animation ------------------------------------------------- */
 @keyframes letter-animation {
     0% {
         stroke-dashoffset: 2600;

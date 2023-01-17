@@ -14,16 +14,18 @@
     </head>
     <body>
         <header>
-            <div class="container">  
-                <a href="index.html"><img src="img/projectWoo/logoFinn.svg" class="logo" alt="woo logo"></a>
-                <nav>
-                    <ul class="navigation">
-                        <li class="mobileMenu"><a href="menu"><i class="fa-sharp fa-solid fa-bars"></i></a></li>
-                        <li><a href="index.html">Portfolio</a></li>
-                        <li><a href="about.html">About Woo</a></li>
-                        <li><a href="#contact">contact</a></li>
-                    </ul>
-                </nav>
+            <div class="container">
+                <div class="navtoggle" id="myNavtoggle">  
+                    <a href="index.html"><img src="img/projectWoo/logoFinn.svg" class="logo" alt="woo logo"></a>
+                    <nav>
+                        <ul class="navigation">
+                            <li><a href="index.html">Portfolio</a></li>
+                            <li><a href="about.html">About Woo</a></li>
+                            <li><a href="#contact">contact</a></li>
+                            <li><a href="javascript:void(0);" class="mobileMenu" onclick="menuToggle()"><i class="fas fa-bars"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
                 <div class="quickContact">
                     <a href="https://www.instagram.com/imfinnwoo/" target="_blank"><i class="fa-brands fa-solid fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132" target="_blank"><i class="fa-solid fa-user"></i></a>
@@ -138,10 +140,12 @@
                     <a href="tel:+16467062555" class="button contact">Call me</a>
                     <a href="mailto:woojooinnet@gamil.com" class="button contact">Drop me an email</a>
                 </div>
-                <p>©2022 - Chukyung WOO</p>
+                <p class="copyright">©2022 - Chukyung WOO</p>
             </div>
         </footer>
-
+        
+        <!-- <script src="js/jquery-3.6.3.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
