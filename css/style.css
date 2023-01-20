@@ -292,48 +292,14 @@ main {
 }
 
 /* logo animation ------------------------------------------------- */
-#logoani {
-    width: 100%;
-    height: 200px;
-    display:inline-block;
-    stroke:var(--point-color);
-    fill:var(--support-color-gray);
-    position: relative;
+#introAni {
+    
 }
 
-.logo-path {
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-}
-
-.logo-path {
-    stroke-dasharray: 2600;
-    stroke-dashoffset: 2600;
-}
-
-.n-1 {
-    stroke-width: 20;
-    animation: letter-animation 8s linear infinite;
-    animation-delay: 0.5s;
-}
-
-.n-2 {
-    stroke-width: 20;
-    animation: letter-animation 8s linear infinite;
-    animation-delay: 0.2s;
-}
-
-.r-2 {
-    stroke-width: 20;
-    animation: letter-animation 8s linear infinite;
-    animation-delay: 0.8s;
-}
-
-.r-1 {
-    stroke-width: 20;
-    animation: letter-animation 8s linear infinite;
-    animation-delay: 1s;
+#logoAni {
+    opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
 }
 
 /* moving circle ------------------------------------------------- */
