@@ -10,12 +10,15 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-color: #ffffff;
     font-family: 'Comfortaa', sans-serif, cursive;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
     color: #000000;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -43,6 +46,11 @@ h4 {
     font-weight: 700;
     padding: 16px 0;
 }
+
+p span {
+    font-weight:700;
+}
+
 .center {
     text-align: center;
 }
@@ -123,16 +131,18 @@ img {
 .col-mo-12 {width: 100%;}
 
 
-/* Layout ------------------------------------------------- */
+/* Common Layout ------------------------------------------------- */
 .container {
     padding: 0 16px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    height:100%;
+    padding-top:60px;
 }
 
 .row {
-    margin:24px 0;
+    margin:0;
 }
 .row::after {
     content: "";
@@ -140,19 +150,37 @@ img {
     display: table;
 }
 
+
+/* header ------------------------------------------------- */
 header {
-    text-align: center;
     position: fixed;
+    top:0;
+    text-align: center;
     width: 100%;
     background-color: white;
-    z-index: 100;
+    display: block;
+    transition: top 0.3s;
 }
-header nav {
-display: inline-block;
+
+header > .container {  
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
 header .logo{
-    max-width: 36px;
+    margin-right: 4px;
+    color: #000000;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+header nav {
+    display: inline-block;
 }
 
 header .navtoggle nav > ul > li {
@@ -164,12 +192,7 @@ header i {
     margin-left: 8px;
 }
 
-header .navtoggle nav > ul > li {
-    display: inline-block;
-    margin-left: 0px;
-}
-
-header .navtoggle li:not(:last-child) {
+header .navtoggle li:not(:first-child) {
     display: none;
 }
 
@@ -188,60 +211,177 @@ header .navtoggle nav > ul > li a:active {
 }
 
 header .navtoggle, 
-header .container,
-header .navtoggle.responsive {
+header .container {
     position: relative;
 }
 
 header .navtoggle.responsive li  {
     display: inline-block;
-    padding: 20px 6px 8px 6px;
+    padding: 10px;
 }
 
-header .navtoggle.responsive li:last-child  {
+header .navtoggle.responsive li:first-child  {
     display: block;
     padding: 0px;
+    margin-top: 16px;
+}
+
+/* nav icon animation - START --------------------*/
+#nav-icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--point-color);
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+
+#nav-icon span:nth-child(4) {
+  top: 2px;
+}
+
+#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+  top: 12px;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 22px;
+}
+
+#nav-icon.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+/* nav icon animation - END --------------  */
+
+
+header .responsive  {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffffff;
 }
 
 header .navtoggle li .mobileMenu {
-    position: absolute;
-    left: 0;
-    top: 10px;
+    
 }
 
 header .navtoggle li .mobileMenu > i{
     margin-left:0;
 }
 
-header .quickContact {
-    position: absolute;
-    right: 16px;
-    top: 25px;
-}
-
-header > .container {  
-    padding: 16px;
-    align-items: center;
-    box-shadow: 0px 4px 4px 0px var(--support-color-gray);
-}
 main {
-    padding-top:100px;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 80px; */
+    overflow: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+main section {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
+main section#workList, main section#skiils {
+    height: auto;
+}
+
+main section#footer {
+    height: auto;
+}
+
+/* intro ------------------------------------------------- */
 #intro {
     display: inline-block;
-    width: 100%;
     text-align: center;
 }
+
+#intro .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#intro .hi {
+    min-height:200px;
+}
+
 #intro .categories > div{
     display: inline-block;
 }
 
-/* intro ------------------------------------------------- */
 #intro h1, 
 #intro h4, 
 #intro p {
     text-align: center;
+}
+
+#introAni {
+    position: relative;
+}
+
+.logobg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: logoback 9s ease 1;
+
 }
 
 /* worklist ------------------------------------------------- */
@@ -274,36 +414,50 @@ main {
 }
 
 /* Footer ------------------------------------------------- */
-#contact {
+footer {
+    width: 100%;
     text-align: center;
     background-color: var( --support-color-gray);
 }
 
-#contact h4 {
-    padding-top: 24px;
-    border-top: 0.3px solid rgb(201, 201, 201);
-}
-
-#contact p.copyright {
+footer p.copyright {
     padding: 16px 0;
     margin-top: 20px;
-    border-top: 0.3px solid #00000052;
     font-size: 0.85em;
 }
 
-/* logo animation ------------------------------------------------- */
-#introAni {
-    
+/* Animation ------------------------------------------------- */
+#introAni { /* logo animation Start */
+    display: inline-block;
+    width: 250px;
 }
 
-#logoAni {
-    opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
+#introAni path {
+    fill: none;
+    stroke: var(--point-color);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
 }
 
-/* moving circle ------------------------------------------------- */
-.skillAni {
+#w1 {
+    -webkit-animation: write1 9s linear infinite;
+    animation: write1 9s linear infinite;
+}
+
+#w2 {
+    -webkit-animation: write2 9s linear infinite;
+    animation: write2 9s linear infinite;
+}
+
+#o {
+    -webkit-animation: write3 9s linear infinite;
+    animation: write3 9s linear infinite;
+}
+
+.skillAni { /* moving circle Start */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -352,12 +506,6 @@ main {
         line-height: 1.5;
     }
 
-    header .logo {
-        max-width: 64px;
-        position: absolute;
-        left:16px;
-    }
-
     header nav {
         height: 68px;
     }
@@ -365,27 +513,19 @@ main {
     header .navtoggle ul {
         line-height: 70px;
     }
-    header .navtoggle li:not(:last-child) {
+    header .navtoggle li:not(:first-child) {
         display: inline-block;
         margin: 0 8px;
     }
     
-    header .navtoggle li:last-child {
+    header .navtoggle li:first-child {
         display: none;
-    }
-
-    main {
-        padding-top:120px;
     }
 
     #aboutMe .myText {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 36px;
-    }
-
-    #contact .container {
-        text-align: center;
     }
 
     .projectDes > h4 > span{
@@ -400,9 +540,16 @@ main {
     .circleOne, .circleTwo {
         height:300px;
     }
+
+    #introAni {
+        width: 500px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+    .container{
+        padding-top:60px;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -416,21 +563,51 @@ main {
 }
 
 /* animation ------------------------------------------------- */
-@keyframes letter-animation {
+@keyframes write1 {
+    to {
+        stroke-dashoffset: 0;
+    }
+  }
+  
+@keyframes write2 {
     0% {
-        stroke-dashoffset: 2600;
+        stroke-dashoffset: 2500;
     }
-    60% {
-        stroke-dashoffset: -2600;
-    }
-    75% {
-        stroke-dashoffset: 2600;
-    }
-    85% {
-        stroke-dashoffset: -2600;
+    33% {
+        stroke-dashoffset: 2500;
     }
     100% {
-        stroke-dashoffset: 2600;
+        stroke-dashoffset: 0;
+    }
+}
+  
+@keyframes write3 {
+    0% {
+        stroke-dashoffset: 2500;
+    }
+    50% {
+        stroke-dashoffset: 2500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes logoback {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.3;
+    }
+    45% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -441,6 +618,6 @@ main {
   @keyframes moving-circleTwo { 
     from { transform: translate(-8px, 5px) scale(1, 0.95); } 
     to { transform: translate(7px, -3px) ; }
-  }
+}
 
   

@@ -13,58 +13,62 @@
         <title>Content Designer WOO's portfolio of web design and web development</title>
     </head>
     <body>
-        <header>
+        <header id="headerNav">
             <div class="container">
-                <div class="navtoggle" id="myNavtoggle">  
-                    <a href="index.html"><img src="img/projectWoo/logoFinn.svg" class="logo" alt="woo logo"></a>
+                <!-- <a href="index.html" class="logo" style="background: no-repeat url(img/projectWoo/logoFinn.svg);"></a> -->
+                <a href="index.html" style="color:#000000;"><p><span>Designer</span> WOO</p></a>
+                <div class="navtoggle" id="myNavtoggle">
                     <nav>
                         <ul class="navigation">
-                            <li><a href="index.html">Portfolio</a></li>
-                            <li><a href="about.html">About Woo</a></li>
+                            <li>
+                                <!-- <a href="javascript:void(0);" class="mobileMenu" onclick="menuToggle()"><i class="fas fa-bars"></i></a> -->
+                                <a href="javascript:void(0);" class="mobileMenu" onclick="menuToggle()" id="nav-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li><a href="#workList">Work</a></li>
+                            <li><a href="#skiils">Skills</a></li>
                             <li><a href="#contact">contact</a></li>
-                            <li><a href="javascript:void(0);" class="mobileMenu" onclick="menuToggle()"><i class="fas fa-bars"></i></a></li>
                         </ul>
                     </nav>
-                </div>
-                <div class="quickContact">
-                    <a href="https://www.instagram.com/imfinnwoo/" target="_blank"><i class="fa-brands fa-solid fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/finn-chukyung-woo-949589132" target="_blank"><i class="fa-solid fa-user"></i></a>
-                    <a href="mailto:woojooinnet@gamil.com" target="_blank"><i class="fa-regular fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </header>
         <main>
-            <div id="introAni" class="animateImg">
-                <picture>
-                    <svg id="logoAni" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1152.18 469.03">
-                        <g id="handwriting" stroke-linejoin="round">
-                          <path id="w" d="M235.7,20.2c0,0-107.3,64.8-107.3,143.5c0,25.2,13.8,39.9,23.2,45.8c29.9,18.8,55.1,4.5,61.6-0.1
-                              c6.1-4.4,17-13.6,21.1-28.9c2.5-9.5,3.3-21.5,0.5-30.3c-2.8-8.9-11.5-11.3-18.2-8.3c-5.3,2.3-13.2,9.9-17.7,17.3
-                              c-5.7,9.5-8.7,20.2-7.7,32.6c0.5,5.6,1.7,10.7,3.5,15.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-                          <path id="w1" d="M205.9,224.9c8.5,9,20.2,14.3,30.6,16.3c13,2.5,39.7-0.7,55.4-25.8c11.1-17.9,13.8-53.4,12.1-91.9
-                              c-0.2-3.8-0.5-10.6-7.9-14c-3-1.4-6.9-2.1-11.4,0.4c-6.9,3.9-7.9,10.9-5.6,16.8c2.8,7.1,11.4,11.3,14.7,12.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-                          <path id="o" d="M362.6,132.6c-5.6,6.1-16.7,10.9-27.9,9c-2.2-0.4-4.5-1-6.6-1.8c0,0-4.8-1.7-8.7-4.5c-5.7-4-9.6-9.3-8.9-14.9
-                              c1.8-14.3,18.4-15.8,23.9-5.5c3.1,5.8,2,12.1-4,17.9c-3.8,3.6-8.3,6.8-15.6,8.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-                        </g>
-                      </svg>
-                </picture>
-                <!-- <img src="img/projectWoo/logo_sample.svg" alt="animate logo" style="width:200px"> -->
-            </div>
-            <div id="intro">
+            <section id="intro">
                 <div class="container">
-                    
-                    <h1>Welcome!</h1>
-                    <h4>My name is <span>FINN WOO,</span></h4>
-                    <p>
-                        I’m a <span>content designer</span> with working experience in various industry fields.
-                    </p>
-                    <div class="categories">
-                        <div><a href="about.html" class="button contact">About me</a></div>
-                        <div><a href="#contact" class="button contact">contact</a></div>
+                    <div id="introAni" class="animateImg">
+                        <picture>
+                            <svg id="logoAni" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                        viewBox="0 0 400 369.4" style="enable-background:new 0 0 400 369.4;" xml:space="preserve">
+                                <g>
+                                    <path id="o" d="M382,187.5c-8.7,9.5-25.9,16.9-43.2,13.9c-3.4-0.6-7-1.5-10.2-2.8c0,0-7.4-2.6-13.5-7
+                                    c-8.8-6.2-14.9-14.4-13.8-23.1c2.8-22.2,28.5-24.5,37-8.5c4.8,9,3.1,18.8-6.2,27.7c-5.9,5.6-12.9,10.5-24.2,12.9"/>
+                                    <path id="w2" d="M139.1,330.5c13.2,13.9,31.3,22.2,47.4,25.3c20.1,3.9,61.5-1.1,85.9-40c17.2-27.7,21.4-82.8,18.8-142.4
+                                        c-0.3-5.9-0.8-16.4-12.2-21.7c-4.6-2.2-10.7-3.3-17.7,0.6c-10.7,6-12.2,16.9-8.7,26c4.3,11,17.7,17.5,22.8,19.5"/>
+                                    <path id="w1" d="M185.3,13.2c0,0-166.3,100.4-166.3,222.4c0,39.1,21.4,61.8,36,71c46.3,29.1,85.4,7,95.5-0.2
+                                        c9.5-6.8,26.3-21.1,32.7-44.8c3.9-14.7,5.1-33.3,0.8-47c-4.3-13.8-17.8-17.5-28.2-12.9c-8.2,3.6-20.5,15.3-27.4,26.8
+                                        c-8.8,14.7-13.5,31.3-11.9,50.5c0.8,8.7,2.6,16.6,5.4,23.7"/>
+                                </g>
+                            </svg>
+                        </picture>
+                        <div class="logobg">
+                            <img src="img/projectWoo/logoBg.svg" alt="logo background">
+                        </div>
+                    </div>
+                    <div class="hi">
+                        <h1>Hi,</h1>
+                        <p>
+                            My name is <span>FINN WOO</span><br>
+                            A versatile <span>Content Designer</span> with an experience in various industries.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div id="workList">
+            </section>
+            <section id="workList">
                 <div class="container">
                     <div class="row">
                         <h2>Web Design</h2>
@@ -87,25 +91,78 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contentPrevious"></div>
-                    <div class="contentNext"></div>
+                    <!-- <div class="contentPrevious"></div>
+                    <div class="contentNext"></div> -->
                 </div>
-            </div>
+            </section>
+            <section id="skiils">
+                <div class="skillAni">
+                    <picture>
+                        <div class="container">
+                            <div class="circleOne"><span>PhotoShop<br>Illustrator</span></div>
+                            <div class="circleTwo"><span>HTML5<br>CSS3</span></div>
+                        </div>
+                    </picture>
+                </div>
+                <div class="toolWrap">
+                    <div class="col-med-6">
+                        <h4>Skills</h4>
+                        <div class="skillList">
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Responsive Web</li>
+                                <li>JavaScript</li>
+                                <li>UX/UI Design and Prototyping</li>
+                                <li>UX Writing</li>
+                                <li>Bootstrap Framework</li>
+                                <li>WordPress</li>
+                                <li>SCSS and LESS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-med-6">
+                        <h4>Tools</h4>
+                        <div class="toolList">
+                            <ul>
+                                <li>Photoshop</li> 
+                                <li>Illustrator</li> 
+                                <li>InDesign</li> 
+                                <li>Adobe XD</li> 
+                                <li>Figma</li> 
+                                <li>Visual Studio Code</li> 
+                                <li>GitHub</li> 
+                                <li>MS Office</li> 
+                                <li>Sublime Text</li>
+                                <li>Eclipse</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <section id="footer">
+                    <p class="copyright">©2022 - Chukyung WOO</p>
+                </section>
+            </footer>
         </main>
-        <footer id="contact">
-            <div class="container">
-                <h4>Interested in working together?</h4>
-                <div class="contactWrap">
-                    <a href="tel:+16467062555" class="button contact">Call me</a>
-                    <a href="mailto:woojooinnet@gamil.com" class="button contact">Drop me an email</a>
-                </div>
-                <p class="copyright">©2022 - Chukyung WOO</p>
-            </div>
-        </footer>
         
         <!-- <script src="js/jquery-3.6.3.js"></script> -->
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
 
+        <script>
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("headerNav").style.top = "0";
+            } else {
+                document.getElementById("headerNav").style.top = "-100px";
+            }
+            prevScrollpos = currentScrollPos;
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="js/stylelint.config.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
